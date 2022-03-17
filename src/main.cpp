@@ -1,5 +1,4 @@
 #include <Arduino.h>
-
 #include <QMC5883LCompass.h>
 /*
  * Version: 1.1
@@ -9,6 +8,8 @@
  */
  
 QMC5883LCompass compass;
+void setBounds();
+void setRandomDirection();
 
 //Shift register variables
 int latchPin = 11;
@@ -80,7 +81,6 @@ void loop() {
     chosenLED = RED_R;
   } else {
     Serial.println("No LED Chosen");
-    //chosenLED = ERROR_LED;
   }
 
    digitalWrite(latchPin, LOW);
